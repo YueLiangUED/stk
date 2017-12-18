@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+        <link rel="stylesheet" href="css/minireset.css">
+        <link rel="stylesheet" href="css/swiper.css">
+        <link rel="stylesheet" href="css/index4-1.css">
+        <script src="js/jquery.js"></script>   
+        <script src="js/swiper.min.js"></script>   
+        <script src="js/index4-1.js"></script>
+        <script src="laydate/laydate.js"></script>
+    </head>
+    <body>
+        <!-- 头部定义 -->
+    	<header>
+        	<div class="header-back"></div>
+            <p>北京移动校园卡</p>
+        </header>
+        <!-- 倒计时定义 -->
+        <div class="time">
+        	<div></div><p>请在15分钟内填写完成，超时号码自动释放</p>
+        </div>
+        <!-- 已选号码定义 -->
+        <div class="chosen">
+			<p>已选号码</p>
+	        <!-- 后台读取用户选择号码 -->
+			<p>15711277221</p>
+        </div>
+        <!-- 入网信息定义 -->
+        <div class="user-info">
+        	<div class="title">
+            	<div></div><p>入网信息<a>&nbsp;&nbsp;(&nbsp;</a><a>*&nbsp;</a><a>为必填项&nbsp;)</a></p>
+            </div>
+            <div class="info-block">
+				<p><a>*&nbsp;</a>办卡人姓名</p>
+                <input placeholder="姓名"></input>
+            </div>
+            <div class="info-block">
+				<p><a>*&nbsp;</a>联系电话</p>
+                <input placeholder="电话"></input>
+            </div>
+            <div class="info-block">
+				<p>&nbsp;&nbsp;&nbsp;身份证号码</p>
+                <input placeholder="办卡人身份证号码"></input>
+            </div>
+            <div class="info-block">
+				<p>&nbsp;&nbsp;&nbsp;学校</p>
+				<!-- 从后台读取学校名称 -->
+                <p class="input-school">北京师范大学</p>
+            </div>
+            <div class="info-block">
+				<p>&nbsp;&nbsp;&nbsp;院系</p>
+                <input placeholder="院系名称"></input>
+            </div>
+            <div class="info-block">
+				<p>&nbsp;&nbsp;&nbsp;微信号</p>
+                <input placeholder="微信号"></input>
+            </div>
+        </div>
+        <!-- 物流信息定义 -->
+        <div class="trans-info">
+        	<div class="title">
+            	<div></div><p>配送信息<a>&nbsp;&nbsp;(&nbsp;</a><a>*&nbsp;</a><a>为必填项&nbsp;)&nbsp;</a><a>购买前请与相关人员联系</a></p>
+            </div>
+            <div class="trans-sytle-button">
+            	<p class="active">到校上门服务</p>
+            	<p>到校自取</p>
+            	<p>配送到家</p>
+            </div>
+            <!-- 到校上门服务业务 -->
+            <div class="trans-style-school">
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>收货人姓名</p>
+                    <input type="text"></input>
+                </div>
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>上门地址</p>
+                    <div class="address"><input type="text" id="picktime" placeholder="请选择" readonly><div></div></div>
+                </div>
+                <div class="trans-info-block">
+                    <textarea placeholder="请填写详细地址，不少于5个字"></textarea>
+                </div>
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>预约上门时间</p>
+                    <div class="date-time"><input placeholder="请选择" onclick="laydate()"></input><div></div></div>
+                </div>
+                <p class="service-notice">我们会尽快安排相关人员与您联系</p>
+            </div>
+            <!-- 到校自取业务 -->
+            <div class="trans-style-self">
+                <div class="trans-info-block">
+                    <!-- 后台读取学校名称 -->
+                    <p>学&emsp;&emsp;校：<a>北京大学</a></p>
+                    <!-- 后台读取学校信息 -->                
+                    <p>领取时间：<a>2017年8月20日——2017年9月30日(待定)</a></p>
+                    <!-- 后台读取学校信息 -->
+                    <p>领取地址：<a>北京大学营业厅-北京市海淀区学院路XX号</a></p>
+                    <!-- 后台读取学校信息 -->
+                    <p>联系电话：<a>15756488997</a></p>
+                </div>
+            </div>
+            <!-- 配送到家业务 -->
+            <div class="trans-style-home">
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>收货人姓名</p>
+                    <input></input>
+                </div>
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>联系电话</p>
+                    <input placeholder="13611111111"></input>
+                </div>
+                <div class="trans-info-block">
+                    <p><a>*&nbsp;</a>收货地址</p>
+                    <div class="address"><input type="text" placeholder="请选择" readonly><div></div></div>
+                </div>
+                <div class="trans-info-block">
+                    <textarea placeholder="请填写详细地址，不少于5个字"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="wxts"><p>温馨提示：签收时请务必本人签收并准备好身份证</p></div>
+        <div class="tj-btn"><p>提交</p></div>
+     	<!-- 弹窗部分 -->   
+        <div id="mask" class="mask"></div>    
+        <div id="mask" class="mask two"></div>    
+		<div class="time-limit-windo">
+        	<p>请在15分钟内填写完信息，超时号码自动释放</p>
+			<p>知道了</p>
+        </div>
+		<div class="time-limit-overload">
+        	<p>填写超时，改号码已释放</p>
+            <p>请重新选号</p>
+			<p>重新选号</p>
+        </div>
+        <div class="city-list">
+        	<div class="city-list-title">
+            	<p>取消</p>
+                <p>完成</p>
+            </div>
+            <!-- swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><p>北京市</p></div>
+                <div class="swiper-slide"><p>河北省</p></div>
+                <div class="swiper-slide"><p>天津市</p></div>
+                <div class="swiper-slide"><p>吉林省</p></div>
+                <div class="swiper-slide"><p>辽宁省</p></div>
+                <div class="swiper-slide"><p>河北省</p></div>
+                <div class="swiper-slide"><p>山西省</p></div>
+                <div class="swiper-slide"><p>青海省</p></div>
+                <div class="swiper-slide"><p>山东省</p></div>
+              </div>
+			    <div class="swiper-pagination"></div>              
+            </div>            
+        </div>
+		<script> 
+			var mySwiper = new Swiper('.swiper-container', {
+				direction : 'vertical',			
+				//pagination : '.swiper-pagination',
+		        slidesPerView: 5,				
+				centeredSlides : true,
+					});	
+    function hideMask(){     
+        $("#mask").hide();     
+    }  
+
+        </script>        
+    </body>
+</html>

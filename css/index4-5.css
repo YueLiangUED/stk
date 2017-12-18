@@ -1,0 +1,108 @@
+/*头部*/
+.header{
+    position: relative;
+    margin:0;
+    padding-top:1.2rem;
+    width:100%;
+    height:4.6rem;
+    background-color: #0085cf;
+}
+.header a{
+    position: absolute;
+    left:1rem;
+    top:0;
+    bottom:0;
+    margin: auto;
+    display: inline-block;
+    width:1.35rem;
+    height:1.35rem;
+}
+.header a span{
+    display: block;
+    width:0.9rem;
+    height:1.7rem;
+    background: url(../images/return.png) center no-repeat;
+    background-size: cover;
+}
+.header p{
+    font-size:1.8rem;
+    color:#fff;
+    text-align: center;
+}
+/*主体内容*/
+.content{
+    position: relative;
+    margin: 0;
+    padding-top: 2rem;
+    width: 100%;
+    height:19.35rem;
+    text-align: center;
+}
+.content span{
+    margin: auto;
+    display: block;
+    width:6.2rem;
+    height:6.2rem;
+    background: url(../images/tick.png) center no-repeat;
+    background-size: cover;
+}
+.content p{
+    margin: 1.3rem 2.6rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+    white-space:nowrap;
+}
+.content div{
+    position: absolute;
+    left:4.85rem;
+    bottom:2.55rem;
+    width: 11.9rem;
+    height: 3.4rem;
+    box-sizing: border-box;
+    border: 0.2rem solid #666666;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    color: #333333;
+}
+.content .returnHome{
+    left:20.75rem;
+    border-color: #0085cf;
+    color: #0085cf;
+}
+/*底部描述*/
+.description{
+    position: relative;
+    width: 100%;
+    height:100%;
+}
+.description div{
+    margin-bottom: 2.3rem;
+    width: 100%;
+    height:1rem;
+    background-color: #f3f3f3;
+}
+.description span{
+    position: absolute;
+    top: 3.7rem;
+    left: 2.45rem;
+    display: inline-block;
+    width:1.7rem;
+    height:1.7rem;
+    background: url("../images/warn.png") center no-repeat;
+}
+.description p{
+    position: absolute;
+    left: 0;
+    right:0;
+    margin: auto;
+    margin-bottom: 31.1rem;
+    display: inline-block;
+    width: 33.5rem;
+    font-size: 1.3rem;
+    line-height: 2.6rem;
+    text-indent: 2.5rem;
+    letter-spacing: 0.05rem;
+    color:#b2b2b2;
+}
